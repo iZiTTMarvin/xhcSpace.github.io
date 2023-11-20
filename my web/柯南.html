@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>名侦探柯南介绍</title>
+  <style>
+    * {
+        background-image: url(/photos/背景/背景03.jpg);
+        box-sizing: border-box;
+        /* 使用border-box， padding和border的值就不会在影响元素的宽高 */
+        margin: 0;
+        padding: 0;
+    }
+
+        body {
+        font-family: Arial, sans-serif;
+        }
+
+        header {
+        text-align: center;
+        background-color: #f2f2f2;
+        padding: 20px 0;
+        }
+
+        .carousel {
+        display: flex;
+        justify-content: space-around;
+        /* 在每行上均匀分配弹性元素。相邻元素间距离相同。 */
+        margin-top: 20px;
+        }
+
+        .slide {
+        text-align: center;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 500px;
+        margin-top: 50px;
+        }
+
+        .slide img {
+        width: 400px;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        }
+
+        .slide h3 {
+        margin-bottom: 10px;
+        }
+
+        .slide p {
+        color: black;
+        }
+        .header{
+            text-align: center;
+            position: absolute;
+            height: 45px;
+            width: 200px;
+        }
+        .slide {
+            animation: fade 2s;
+        }
+        
+        @keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>名侦探柯南——人物介绍</h1>
+  </header>
+  <section class="carousel">
+    <div class="header">重要人物</div>
+    <div class="slide">
+      <img src="/my web/Photos/柯南1.webp" alt="柯南">
+      <h3>柯南</h3>
+      <p>柯南是本作的主角，原名工藤新一，因服用了APTX-4869而变成了小孩的身体，但保留了成年人的头脑，以柯南的身份在侦探界活跃。</p>
+    </div>
+    <div class="slide">
+      <img src="/my web/Photos/小兰.jpg" alt="小兰">
+      <h3>小兰</h3>
+      <p>小兰是新一的青梅竹马，她对柯南的真实身份一无所知，是柯南的重要朋友和侦探助手。</p>
+    </div>
+    <div class="slide">
+      <img src="/my web/Photos/服部平次.png" alt="平次">
+      <h3>平次</h3>
+      <p>平次是柯南的好友，是大阪的高中生侦探。他和柯南一起解决了许多案件。</p>
+    </div>
+    <div class="slide">
+        <img src="/my web/Photos/灰原哀01.webp" alt="灰原哀">
+        <h3>平次</h3>
+        <p>原为黑衣组织的成员雪莉（Sherry）.在姐姐宫野明美遭组织杀害后，因反抗组织而被囚禁，服下APTX4869，身体缩小后背叛组织逃亡，化名灰原哀，寄宿于阿笠博士家中，就读于帝丹小学一年B班。。</p>
+      </div>
+  </section>
+
+  <script src="柯南.js"></script>
+</body>
+</html>

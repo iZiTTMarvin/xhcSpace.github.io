@@ -1,0 +1,217 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>个人网站</title>
+<script src="/JQuery/code.jquery.com_jquery-3.7.1.min.js"></script>
+<style>
+* {
+	margin:0;
+	padding:0;
+}
+html {
+	position:relative;
+	overflow:hidden ;
+}
+body {
+	font-family:'Quicksand',sans-serif;
+	padding:0;
+	margin:0;
+}
+.Page {
+	width:100%;
+	height:100%;
+	min-height:100vh;
+	position:absolute;
+	z-index:0;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+/* .background {
+	width:100%;
+	height:100%;
+	min-height:100vh;
+	background-image:url("/my web/Photos/黑客背景.jpg");
+	position:absolute;
+	z-index:-5;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+} */
+.background2 { 
+	width:100%;
+	height:100%;
+	min-height:100vh;
+	background-image:url("/my web/Photos/黑客背景.jpg");
+	position:absolute;
+	z-index:-4;
+}
+.background2 {
+	background-size:120%;
+}
+.logo_one {
+	margin:auto;
+	margin-top:-100px;
+	width:200px;
+	height:200px;
+	/*background-color:rgba(255,255,255,0.4);
+	border-radius:50%;
+	box-shadow:0px 0px 10px #ffffff;
+	*/
+}
+.logo_two {
+	width:180px;
+	height:180px;
+	margin:5px 5px;
+	border-radius:50%;
+	border:2px solid rgba(255,255,255,0.8);
+	box-shadow:0px 0px 12px rgba(255,255,255,0.9);
+	transition:all 1s;
+	/*box-shadow:0px 0px 10px #ffffff;
+	*/
+}
+.logo_two:hover {
+	transform:rotate(360deg);
+	/* 表示将元素旋转360度。 */
+	box-shadow:0px 0px 50px rgba(255,255,255,1);
+	transition:all 1s;
+	/*box-shadow:0px 0px 10px #ffffff;
+	*/
+}
+.name {
+	margin-top:5px;
+	text-align:center;
+	font-size:30px;
+	color:white;
+	font-weight:500;
+	text-shadow:0px 0px 12px white;
+	transition:all 0.5s;
+}
+.name:hover {
+	text-shadow:0px 0px 30px white;
+	transition:all 0.5s;
+}
+.slogan {
+	margin:auto;
+	width:600px;
+	height:50px;
+	background-color:rgba(255,255,255,0.1);
+	border:1px solid rgba(255,255,255,0.8);
+	text-shadow:0px 0px 12px #ffffff;
+	box-shadow:0px 0px 12px #ffffff;
+	border-radius:30px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	transition:all 0.5s;
+	margin-top:30px;
+}
+.slogan:hover {
+	background-color:rgba(255,255,255,0.4);
+	box-shadow:0px 0px 25px #ffffff;
+	transition:all 0.5s;
+}
+.slogan_two {
+	text-align:center;
+	color:rgba(255,255,255,1);
+	font-size:16px;
+	max-width:500px;
+}
+.button {
+	margin-top:15px;
+	margin-right:auto;
+	margin-left:auto;
+	width:500px;
+	height:100px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+.button1 {
+	margin-left:10px;
+	margin-right:10px;
+	height:50px;
+	width:200px;
+	border:1px solid rgba(255,255,255,0.4);
+	border-radius:25px;
+	background-color:rgba(255,255,255,0.1);
+	color:white;
+	font-size:16px;
+	transition:all 0.5s;
+}
+.button1:hover {
+	background-color:rgba(255,255,255,0.4);
+	color:#ffffff;
+	box-shadow:0px 0px 12px #ffffff;
+	transition:all 0.5s;
+}
+</style>
+</head>
+<body>
+<div class="Page">
+    <div class="proflieCard">
+        <div class="logo_one">
+            <img src="/photos/我的网页/众神之父——布洛特亨德尔.webp" alt="" class="logo_two">
+        </div>
+        <p class="name">APEX猎杀者</p>
+
+        <div class="slogan" id="slogan">
+            <p class="slogan_two" id="slogan_two">APEX</p>
+        </div>
+        <div class="button">
+            <button class="button1" onclick="aboutMe()">个人警句</button>
+            <button class="button1" onclick="window.open('My web.html')">进入我的主页</button>
+            <button class="button1" onclick="window.open('/photos/我的网页/了解你的捍卫者.jpg', '_blank')">了解你的捍卫者</button>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+<div class="background" id="background"></div>
+<div class="background2" id="background2"></div>
+
+
+
+
+<script>
+
+
+var i = 0;
+//函数 aboutMe 的作用是根据全局变量 i 的值来切换页面上某个元素的高度和内容。
+function aboutMe() {
+    var slogan = document.getElementById("slogan");
+    var slogan2 = document.getElementById("slogan_two");
+    if (i == 0) {
+        i = 1;
+        slogan.style.height = "100px";
+        slogan2.innerHTML = "这是一个文本1";
+    } else if (i == 1) {
+        i = 2;
+        slogan.style.height = "60px";
+        slogan2.innerHTML = "这是一个文本2,高度变为60px";
+    } 
+	else if (i == 2) {
+        i = 3;
+        slogan.style.height = "60px";
+        slogan2.innerHTML = "这是一个文本3,高度变为60px";
+    }
+	else if (i == 3) {
+        i = 4;
+        slogan.style.height = "60px";
+        slogan2.innerHTML = "这是一个文本4,高度变为60px";
+    }else {
+        i = 0;
+        slogan.style.height = "50px";
+        slogan2.innerHTML = "这是一个文本";
+    }
+}
+
+</script>
+
+</body>
+</html>

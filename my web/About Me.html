@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>My Introduction</title>
+  <style>
+    .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    }
+
+    .self-intro, .idol-info {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+    height: 100%;
+    }
+    .self-intro{
+        background-image: url(/个人空间/登录背景美图.png);
+        color: red;
+    }
+    h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    }
+    .carousel-container {
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    }
+
+    .carouselContainer {
+    display: flex;
+    width: 300%;
+    transition: transform 0.5s ease;
+    /* ease 以缓慢的速度开始，然后逐渐加速，最后再缓慢结束 */
+    }
+
+    .carouselContainer img {
+    width: 33.3%;
+    height: auto;
+    }
+    .prev-btn,
+    .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    }
+
+    .prevButton {
+    left: 0;
+    }
+
+    .nextButton {
+    right: 0;
+    }
+    div.k p{
+        font-size: 20px;
+    }
+
+  </style>
+</head>
+<body>
+    <div class="back">
+        <a href="/my web/My Web.html"><h2>返回</h2></a>
+    </div>
+   <div class="grid-container">
+    <div class="self-intro">
+      <h2>自我介绍</h2>
+      <p>你好，我叫[xhc]，我是一个热爱编程的溯洄人。</p>
+      <div class="k">
+      <p>本人具有很强的团队精神，很乐于参加团体活动，珍惜团体荣誉，维护团体利益，我能表达个人观点，当别人的观点不受赞同时，我都会尊重他的观点，即使不对，为了不伤害他的自尊心，我会尊重和鼓励他。我善于与他人交流合作，每当我有欢乐的事，我都会与朋友一齐分享。我的人际关系也很融洽。我热爱生活，我喜欢观察生活，为了发展我的实践能力，我会参加一些活动，不但能够认识一些朋友，还能够开拓视野。</p>
+      <p>做事认真负责，在各项工作中，能把同学们团结到一齐，善于与他人协同“作战”，社会实践能力强，对新事物理解本事快，乐观向上，爱好广泛，并能努力做好每一件事。能够积极上进并主动挑战一些困难。</p>
+      <p>平时注意锻炼身体，喜欢打篮球，乒乓球，游泳等，会骑自行车，有时早上会和爸爸骑赛车在环路绕一圈。在班级任体委，经常组织同学和其它班级同学打比赛。活动中同学之间产生矛盾能够帮忙调节，遇事冷静，不冲动。</p>
+    </div>
+    </div>
+    <div class="idol-info">
+      <h2>我的偶像</h2>
+      <p>我的偶像是著名的足球运动员克里斯蒂亚诺·罗纳尔多，他是一位出色的运动员和慈善家。</p>
+      <!-- <div class="carousel-container">
+        <div class="carouselContainer">
+          <img src="/my web/Photos/1.jpg" alt="Image 1">
+          <img src="/my web/Photos/2.jpg" alt="Image 2">
+          <img src="/my web/Photos/3.jpg" alt="Image 3">
+        </div>
+        <button class="prevButton">Prev</button>
+        <button class="nextButton">Next</button>
+      </div> -->
+      <div class="slideshow-container">  
+        <div class="mySlides ">  <a href="/个人空间/Siuuuuuuu~.mp4">
+          <img src="/my web/Photos/1.jpg" style="width:100%">  
+        </a>
+        </div>  
+        
+        <div class="mySlides ">  <a href="/个人空间/Siuuuuuuu~.mp4">
+          <img src="/my web/Photos/2.jpg" style="width:100%">  
+        </a>
+        </div>  
+        
+        <div class="mySlides ">  <a href="/个人空间/Siuuuuuuu~.mp4">
+        </a>
+          <img src="/my web/Photos/3.jpg" style="width:100%">  
+        </div>  
+        
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a >  
+        <a class="next" onclick="plusSlides(1)">&#10095;</a >  
+          <!-- onclick 属性会调用 plusSlides 函数，并传递参数 -1 或 1，以指示切换到上一张或下一张幻灯片。 -->
+      </div>
+    </div>
+   </div>
+   <script>
+    
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      ////plusSlides(n) 函数用于切换幻灯片。它接受一个参数 n，表示要切换的幻灯片数量。它通过调用 showSlides 函数来显示下一张或上一张幻灯片。
+    showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    
+    if (n > slides.length) {
+        slideIndex = 1;
+    }    
+    if (n < 1) {
+        slideIndex = slides.length;
+    }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    slides[slideIndex-1].style.display = "block";  
+    }
+  
+// 首先，定义了一个变量 slideIndex，并初始化为 1。然后调用 showSlides(slideIndex) 函数，这个函数会根据 slideIndex 的值来显示对应的轮播图。
+
+// 接下来，定义了 plusSlides 函数，它接受一个参数 n，用来控制切换到下一个或上一个轮播图。在这个函数中，调用了 showSlides(slideIndex += n)，
+// 这行代码会将 slideIndex 的值加上 n，然后调用 showSlides 函数来显示对应的轮播图。
+
+// 最后，定义了 showSlides 函数，它接受一个参数 n，用来显示对应索引的轮播图。在函数中，首先通过 document.getElementsByClassName("mySlides") 获
+// 取到所有轮播图的元素，然后根据 n 的值来判断应该显示哪张轮播图。如果 n 大于轮播图的数量，就将 slideIndex 设为 1；如果 n 小于 1，就将 slideIndex 设为轮播图
+// 的数量。然后通过遍历所有轮播图的元素，将它们的 display 样式设为 none，最后将当前应该显示的轮播图的 display 样式设为 block，以实现轮播图的切换效果。
+</script>
+   
+   <!-- <script>
+    // 获取按钮元素和轮播图容器
+    var prevButton = document.getElementById('prevButton');
+    var nextButton = document.getElementById('nextButton');
+    var carouselContainer = document.getElementById('carouselContainer');
+
+    // 给按钮元素添加点击事件监听器
+    prevButton.addEventListener('click', function() {
+    // 向左切换
+    carouselContainer.style.transform = 'translateX(-100%)';
+    });
+
+    nextButton.addEventListener('click', function() {
+    // 向右切换
+    carouselContainer.style.transform = 'translateX(100%)';
+    });
+
+   </script> -->
+</body>
+</html>

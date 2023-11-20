@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>个人空间</title>
+  <script src="/JQuery/code.jquery.com_jquery-3.7.1.min.js"></script>
+  <script src="My Web.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url(/个人空间/关于我背景.jpg);
+      background-size: cover;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      background-image: linear-gradient(
+        to bottom right, 
+        rgb(118,75,163),
+        rgb(92,103,211)
+    );
+    /* 从左上到右下对角线进行渐变 */
+    text-shadow: 0 0 10px rgb(221, 76, 124),0 0 20px rgb(221, 76, 124),0 0 30px rgb(221, 76, 124),0 0 40px  rgb(221, 76, 124);
+    /* 加阴影 */
+    }
+
+    nav {
+      background-color: #444;
+      padding: 10px;
+      text-shadow: 0 0 10px rgb(221, 76, 124),0 0 20px rgb(221, 76, 124),0 0 30px rgb(221, 76, 124),0 0 40px  rgb(221, 76, 124);
+      background-color: rgba(253, 206, 237, 0.34);
+      /* 改颜色，加透明 */
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 10px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 5px 10px;
+      transition: all 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #555;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #444;
+    }
+    .dropdown-content a{
+        display: block;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .search-container {
+      display: flex;
+      align-items: center;
+      width: 600px;
+      margin-top: 150px;
+      margin-left: 650px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      /* overflow: hidden; */
+      text-align: center;
+    }
+    .search-input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      outline: none;
+      
+      
+    }
+    .search-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+    }
+    .music-player {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f2f2f2;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-image: linear-gradient(
+        to bottom right, 
+        rgb(118,75,163),
+        rgb(92,103,211)
+      );
+    }
+    .music-info {
+      display: flex;
+      align-items: center;
+    }
+    .music-info img {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+    .music-info p {
+      margin: 0;
+    }
+    .music-controls {
+      display: flex;
+      align-items: center;
+    }
+    .music-controls button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      margin: 0 5px;
+    }
+    #person-table {
+      display: none; /* 初始状态下隐藏表格 */
+      margin: 0 auto; /* 让表格居中显示 */
+    }
+    table,
+    table td,
+    table th {
+        border: 1px solid #000000;
+    }
+    
+  </style>
+</head>
+<body>
+  <header>
+    <h1>个人空间</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="/my web/About Me.html">关于我</a></li>
+      <li class="dropdown">
+        <a href="#">我的作品</a>
+        <div class="dropdown-content">
+          <a href="/my web/Game works.html">游戏作品</a>
+          <a target="_blank" href="/个人空间/Siuuuuuuu~.mp4">视频作品</a>
+        </div>
+      </li>
+      <li><a href="/my web/Message boards.html">留言板</a></li>
+    </ul>
+  </nav>
+  <button id="xianshibiaoge">显示个人表格</button>
+  <table id="person-table" >
+    <thead>
+      <tr>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>职业</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  
+  <div class="search-container">
+    <input type="text" id="search-input" class="search-input" placeholder="输入内容进行搜索...">
+    <button class="search-button" onclick="searchOnBaidu()">Search</button>
+  </div>
+
+  <div class="music-player">
+    <div class="music-info" >
+      <img src="/photos/lao po no.2.webp" alt="Music Icon">
+      <p>音乐播放器</p>
+    </div>
+    <div class="music-controls">
+      <button onclick="playMusic()">播放</button>
+      <button onclick="pauseMusic()">暂停</button>
+    </div>
+    <audio id="music" src="/Music/Limitless.mp3" ></audio>
+  </div>
+  <!-- autoplay -->
+  <div>
+    <button onclick="myFunction()">查看时间</button>
+    <p id="look-look-time"></p>
+  </div>
+
+  
+<script>
+  //播放音乐js：
+
+  // let 来声明 query 变量，这表示 query 变量是在 searchOnBaidu() 函数内部的局部变量。
+  const music = document.getElementById('music');
+  console.log(music)
+  // const 来声明 music 常量，这表示 music 常量是一个不可变的常量，它指向了 id 为 music 的元素。
+  function playMusic() {
+    music.play();
+  }
+
+  function pauseMusic() {
+    music.pause();
+  }
+</script>
+  
+  
+</body>
+</html>

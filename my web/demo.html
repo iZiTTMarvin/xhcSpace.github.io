@@ -1,0 +1,120 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .search-container {
+      display: flex;
+      align-items: center;
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .search-input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      outline: none;
+    }
+    .search-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+  <title>Simple Search Box</title>
+</head>
+<body>
+  <div class="search-container">
+    <input type="text" id="search-input" class="search-input" placeholder="Search...">
+    <button class="search-button" onclick="searchOnBaidu()">Search</button>
+  </div>
+
+  <script>
+    function searchOnBaidu() {
+      let query = document.getElementById('search-input').value;
+      if (query) {
+        window.location.href = 'https://www.baidu.com/s?wd=' + encodeURIComponent(query);
+      }
+    }
+  </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .music-player {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f2f2f2;
+      padding: 10px;
+      box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .music-info {
+      display: flex;
+      align-items: center;
+    }
+    .music-info img {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+    .music-info p {
+      margin: 0;
+    }
+    .music-controls {
+      display: flex;
+      align-items: center;
+    }
+    .music-controls button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      margin: 0 5px;
+    }
+  </style>
+  <title>Music Player</title>
+</head>
+<body>
+  <div class="music-player">
+    <div class="music-info">
+      <img src="/photos/lao po no.2.webp" alt="Music Icon">
+      <p>Song Title - Artist</p>
+    </div>
+    <div class="music-controls">
+      <button onclick="playMusic()">播放</button>
+      <button onclick="pauseMusic()">暂停</button>
+    </div>
+  </div>
+
+  <audio id="music" src="/个人空间/obj_wo3DlMOGwrbDjj7DisKw_10549585487_94a4_e9c7_66c0_f24ce4bbcc347eff6cccc55f373b0f9e.mp3"></audio>
+
+  <script>
+    const music = document.getElementById('music');
+
+    function playMusic() {
+      music.play();
+    }
+
+    function pauseMusic() {
+      music.pause();
+    }
+
+    
+  </script>
+</body>
+</html>
